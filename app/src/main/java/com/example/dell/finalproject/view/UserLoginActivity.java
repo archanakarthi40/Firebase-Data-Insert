@@ -2,6 +2,8 @@ package com.example.dell.finalproject.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,9 @@ import android.widget.Toast;
 import com.example.dell.finalproject.R;
 import com.example.dell.finalproject.presenter.ILoginPresenter;
 import com.example.dell.finalproject.presenter.LoginPresenterCompl;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 public class UserLoginActivity extends AppCompatActivity implements ILoginView, View.OnClickListener  {
     private EditText editUser;
@@ -21,6 +26,7 @@ public class UserLoginActivity extends AppCompatActivity implements ILoginView, 
     private Button registerBtn;
     private ILoginPresenter loginPresenter;
     private ProgressBar progressBar;
+    private ChildEventListener childEventListener;
 
 
     @Override
@@ -51,6 +57,8 @@ public class UserLoginActivity extends AppCompatActivity implements ILoginView, 
         //init
         loginPresenter = new LoginPresenterCompl(this);
         loginPresenter.setProgressBarVisiblity(View.INVISIBLE);
+
+
     }
 
 
@@ -102,4 +110,5 @@ public class UserLoginActivity extends AppCompatActivity implements ILoginView, 
         progressBar.setVisibility(visibility);
 
     }
+
 }

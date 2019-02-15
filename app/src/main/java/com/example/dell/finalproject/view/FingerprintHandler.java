@@ -1,4 +1,4 @@
-package info.androidhive.fingerprint;
+package com.example.dell.finalproject.view;
 
 import android.Manifest;
 import android.app.Activity;
@@ -9,6 +9,8 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
 import android.support.v4.app.ActivityCompat;
 import android.widget.TextView;
+
+import com.example.dell.finalproject.R;
 
 /**
  * Created by whit3hawks on 11/16/16.
@@ -48,7 +50,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
     @Override
     public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
         ((Activity) context).finish();
-        Intent intent = new Intent(context, HomeActivity.class);
+        Intent intent = new Intent(context, UploadVoting.class);
         context.startActivity(intent);
     }
 
