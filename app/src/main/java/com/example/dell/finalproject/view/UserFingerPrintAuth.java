@@ -33,7 +33,8 @@ import javax.crypto.SecretKey;
 
 public class UserFingerPrintAuth extends AppCompatActivity {
     private Cipher cipher;
-    private TextView textView;  private KeyStore keyStore;
+    private TextView textView;
+    private KeyStore keyStore;
     // Variable used for storing the key in the Android Keystore container
     private static final String KEY_NAME = "FingerPrint";
 
@@ -61,8 +62,8 @@ public class UserFingerPrintAuth extends AppCompatActivity {
             textView.setText("Your Device does not have a Fingerprint Sensor");
         }else {
             // Checks whether fingerprint permission is set on manifest
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
-                textView.setText("Fingerprint authentication permission not enabled");
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
+                    textView.setText("Fingerprint authentication permission not enabled");
             }else{
                 // Check whether at least one fingerprint is registered
                 if (!fingerprintManager.hasEnrolledFingerprints()) {

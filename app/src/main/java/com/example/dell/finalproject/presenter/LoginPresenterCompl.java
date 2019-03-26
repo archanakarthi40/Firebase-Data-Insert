@@ -47,6 +47,6 @@ public class LoginPresenterCompl implements ILoginPresenter {
 
     }
     private void initUser(){
-        user = new AdminModel("252525252525","123");
+        user = new AdminModel("252525252525","archana123");
     }
 }
